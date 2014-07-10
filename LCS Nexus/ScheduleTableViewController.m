@@ -10,11 +10,6 @@
 #import "ScheduleCellView.h"
 #import <AFNetworking/AFNetworking.h>
 
-@interface ScheduleTableViewController ()
-
-@property (strong, nonatomic) NSDictionary *dict;
-@end
-
 @implementation ScheduleTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -34,7 +29,6 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://na.lolesports.com:80/api/schedule.json?" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", responseObject);
-        NSLog(@"%@", [[responseObject objectForKey:@"Match2974"] objectForKey:@"maxGames"]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
