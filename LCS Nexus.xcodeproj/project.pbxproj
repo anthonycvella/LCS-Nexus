@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311274B15F844C8D9170CF0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E47818F12F14255827435D6 /* libPods.a */; };
 		870A06A4196CE0E0009F6433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A3196CE0E0009F6433 /* Foundation.framework */; };
 		870A06A6196CE0E0009F6433 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A5196CE0E0009F6433 /* CoreGraphics.framework */; };
 		870A06A8196CE0E0009F6433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A7196CE0E0009F6433 /* UIKit.framework */; };
@@ -22,6 +23,8 @@
 		870A06C8196CE0E0009F6433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A7196CE0E0009F6433 /* UIKit.framework */; };
 		870A06D0196CE0E0009F6433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870A06CE196CE0E0009F6433 /* InfoPlist.strings */; };
 		870A06D2196CE0E0009F6433 /* LCS_NexusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06D1196CE0E0009F6433 /* LCS_NexusTests.m */; };
+		871BD529196CF0ED00CEA6CA /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD528196CF0ED00CEA6CA /* ScheduleTableViewController.m */; };
+		871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E47818F12F14255827435D6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		76389CA972384DA197705137 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		870A06A0196CE0E0009F6433 /* LCS Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCS Nexus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A06A3196CE0E0009F6433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		870A06A5196CE0E0009F6433 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +61,10 @@
 		870A06CD196CE0E0009F6433 /* LCS NexusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCS NexusTests-Info.plist"; sourceTree = "<group>"; };
 		870A06CF196CE0E0009F6433 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		870A06D1196CE0E0009F6433 /* LCS_NexusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCS_NexusTests.m; sourceTree = "<group>"; };
+		871BD527196CF0ED00CEA6CA /* ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTableViewController.h; sourceTree = "<group>"; };
+		871BD528196CF0ED00CEA6CA /* ScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTableViewController.m; sourceTree = "<group>"; };
+		871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCellView.h; sourceTree = "<group>"; };
+		871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +75,7 @@
 				870A06A6196CE0E0009F6433 /* CoreGraphics.framework in Frameworks */,
 				870A06A8196CE0E0009F6433 /* UIKit.framework in Frameworks */,
 				870A06A4196CE0E0009F6433 /* Foundation.framework in Frameworks */,
+				311274B15F844C8D9170CF0A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +99,7 @@
 				870A06CB196CE0E0009F6433 /* LCS NexusTests */,
 				870A06A2196CE0E0009F6433 /* Frameworks */,
 				870A06A1196CE0E0009F6433 /* Products */,
+				76389CA972384DA197705137 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +119,7 @@
 				870A06A5196CE0E0009F6433 /* CoreGraphics.framework */,
 				870A06A7196CE0E0009F6433 /* UIKit.framework */,
 				870A06C5196CE0E0009F6433 /* XCTest.framework */,
+				0E47818F12F14255827435D6 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +134,10 @@
 				870A06B9196CE0E0009F6433 /* FirstViewController.m */,
 				870A06BB196CE0E0009F6433 /* SecondViewController.h */,
 				870A06BC196CE0E0009F6433 /* SecondViewController.m */,
+				871BD527196CF0ED00CEA6CA /* ScheduleTableViewController.h */,
+				871BD528196CF0ED00CEA6CA /* ScheduleTableViewController.m */,
+				871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */,
+				871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */,
 				870A06BE196CE0E0009F6433 /* Images.xcassets */,
 				870A06AA196CE0E0009F6433 /* Supporting Files */,
 			);
@@ -164,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 870A06D5196CE0E0009F6433 /* Build configuration list for PBXNativeTarget "LCS Nexus" */;
 			buildPhases = (
+				A857520CFD724852985C5807 /* Check Pods Manifest.lock */,
 				870A069C196CE0E0009F6433 /* Sources */,
 				870A069D196CE0E0009F6433 /* Frameworks */,
 				870A069E196CE0E0009F6433 /* Resources */,
+				14065EC3B48A4D308AECA85E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +222,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Vella, Anthony";
 				TargetAttributes = {
+					870A069F196CE0E0009F6433 = {
+						DevelopmentTeam = 8Q7Z4BNPVX;
+					};
 					870A06C3196CE0E0009F6433 = {
 						TestTargetID = 870A069F196CE0E0009F6433;
 					};
@@ -249,15 +270,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14065EC3B48A4D308AECA85E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A857520CFD724852985C5807 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		870A069C196CE0E0009F6433 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				870A06BD196CE0E0009F6433 /* SecondViewController.m in Sources */,
+				871BD529196CF0ED00CEA6CA /* ScheduleTableViewController.m in Sources */,
 				870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */,
 				870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */,
 				870A06B0196CE0E0009F6433 /* main.m in Sources */,
+				871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,9 +435,11 @@
 		};
 		870A06D6196CE0E0009F6433 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76389CA972384DA197705137 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCS Nexus/LCS Nexus-Prefix.pch";
 				INFOPLIST_FILE = "LCS Nexus/LCS Nexus-Info.plist";
@@ -392,9 +450,11 @@
 		};
 		870A06D7196CE0E0009F6433 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76389CA972384DA197705137 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCS Nexus/LCS Nexus-Prefix.pch";
 				INFOPLIST_FILE = "LCS Nexus/LCS Nexus-Info.plist";
@@ -462,6 +522,7 @@
 				870A06D7196CE0E0009F6433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		870A06D8196CE0E0009F6433 /* Build configuration list for PBXNativeTarget "LCS NexusTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +531,7 @@
 				870A06DA196CE0E0009F6433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
