@@ -8,7 +8,14 @@
 
 #import "ScheduleTableViewController.h"
 #import "ScheduleCellView.h"
+#import "ScheduleModel.h"
 #import <AFNetworking/AFNetworking.h>
+
+@interface ScheduleTableViewController()
+
+@property (strong, nonatomic) ScheduleModel *scheduleModel;
+
+@end
 
 @implementation ScheduleTableViewController
 
@@ -25,13 +32,8 @@
 {
     [super viewDidLoad];
     
-    NSDictionary *parameters = @{@"tournamentId": @"148"};
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://na.lolesports.com:80/api/schedule.json?" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+    self.scheduleModel = [[ScheduleModel alloc] init];
+    [self.scheduleModel loadDataFromJSON];
 }
 
 - (void)didReceiveMemoryWarning

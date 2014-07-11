@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		311274B15F844C8D9170CF0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E47818F12F14255827435D6 /* libPods.a */; };
+		8709B3BD196E4831006B9FB1 /* ScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8709B3BC196E4831006B9FB1 /* ScheduleModel.m */; };
 		870A06A4196CE0E0009F6433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A3196CE0E0009F6433 /* Foundation.framework */; };
 		870A06A6196CE0E0009F6433 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A5196CE0E0009F6433 /* CoreGraphics.framework */; };
 		870A06A8196CE0E0009F6433 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A7196CE0E0009F6433 /* UIKit.framework */; };
 		870A06AE196CE0E0009F6433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870A06AC196CE0E0009F6433 /* InfoPlist.strings */; };
 		870A06B0196CE0E0009F6433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06AF196CE0E0009F6433 /* main.m */; };
 		870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06B3196CE0E0009F6433 /* AppDelegate.m */; };
-		870A06B7196CE0E0009F6433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870A06B5196CE0E0009F6433 /* Main.storyboard */; };
 		870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06B9196CE0E0009F6433 /* FirstViewController.m */; };
 		870A06BD196CE0E0009F6433 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06BC196CE0E0009F6433 /* SecondViewController.m */; };
 		870A06BF196CE0E0009F6433 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870A06BE196CE0E0009F6433 /* Images.xcassets */; };
@@ -25,6 +25,7 @@
 		870A06D2196CE0E0009F6433 /* LCS_NexusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06D1196CE0E0009F6433 /* LCS_NexusTests.m */; };
 		871BD529196CF0ED00CEA6CA /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD528196CF0ED00CEA6CA /* ScheduleTableViewController.m */; };
 		871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */; };
+		87E16162196F942C00923320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870A06B5196CE0E0009F6433 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		0E47818F12F14255827435D6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		76389CA972384DA197705137 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8709B3BB196E4831006B9FB1 /* ScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleModel.h; sourceTree = "<group>"; };
+		8709B3BC196E4831006B9FB1 /* ScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleModel.m; sourceTree = "<group>"; };
 		870A06A0196CE0E0009F6433 /* LCS Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCS Nexus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A06A3196CE0E0009F6433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		870A06A5196CE0E0009F6433 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 				871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */,
 				870A06BE196CE0E0009F6433 /* Images.xcassets */,
 				870A06AA196CE0E0009F6433 /* Supporting Files */,
+				8709B3BB196E4831006B9FB1 /* ScheduleModel.h */,
+				8709B3BC196E4831006B9FB1 /* ScheduleModel.m */,
 			);
 			path = "LCS Nexus";
 			sourceTree = "<group>";
@@ -256,7 +261,7 @@
 			files = (
 				870A06BF196CE0E0009F6433 /* Images.xcassets in Resources */,
 				870A06AE196CE0E0009F6433 /* InfoPlist.strings in Resources */,
-				870A06B7196CE0E0009F6433 /* Main.storyboard in Resources */,
+				87E16162196F942C00923320 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +318,7 @@
 				870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */,
 				870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */,
 				870A06B0196CE0E0009F6433 /* main.m in Sources */,
+				8709B3BD196E4831006B9FB1 /* ScheduleModel.m in Sources */,
 				871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
