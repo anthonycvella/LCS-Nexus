@@ -141,10 +141,10 @@
 				871BD528196CF0ED00CEA6CA /* ScheduleTableViewController.m */,
 				871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */,
 				871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */,
-				870A06BE196CE0E0009F6433 /* Images.xcassets */,
-				870A06AA196CE0E0009F6433 /* Supporting Files */,
 				8709B3BB196E4831006B9FB1 /* ScheduleModel.h */,
 				8709B3BC196E4831006B9FB1 /* ScheduleModel.m */,
+				870A06BE196CE0E0009F6433 /* Images.xcassets */,
+				870A06AA196CE0E0009F6433 /* Supporting Files */,
 			);
 			path = "LCS Nexus";
 			sourceTree = "<group>";

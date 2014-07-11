@@ -32,14 +32,31 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(matchDataLoaded) name:@"MatchDataLoaded" object:nil];
+    
     self.scheduleModel = [[ScheduleModel alloc] init];
     [self.scheduleModel loadDataFromJSON];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)matchDataLoaded
+{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -53,7 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return self.scheduleModel.numberOfMatches;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +78,7 @@
     static NSString *cellIdentifier = @"ScheduleCell";
     ScheduleCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    [cell setCellContent];
+    [cell setCellContent:[self.scheduleModel matchForIndex:indexPath.row]];
     
     return cell;
 }

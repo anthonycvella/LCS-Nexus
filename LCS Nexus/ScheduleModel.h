@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ScheduleModel : NSObject
-
-- (void)loadDataFromJSON;
-
-@end
-
 @interface ContestantModel : NSObject
 
 @property (strong, nonatomic) NSString *name;
@@ -28,8 +22,15 @@
 
 @property (strong, nonatomic) ContestantModel *blueContestant;
 @property (strong, nonatomic) ContestantModel *redContestant;
-
 @property (strong, nonatomic) NSString *dateTime;
 @property (strong, nonatomic) NSString *winnerId;
+
+@end
+
+@interface ScheduleModel : NSObject
+
+- (void)loadDataFromJSON;
+- (int)numberOfMatches;
+- (MatchModel *)matchForIndex:(int)row;
 
 @end

@@ -43,9 +43,15 @@
     // Configure the view for the selected state
 }
 
-- (void)setCellContent
+- (void)setCellContent:(MatchModel *)matchModel
 {
-    //self.leftTeamLogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[self.scheduleTableViewController.scheduleJSONData objectForKey:@"acronym"]]];
+    self.leftTeamName.text = matchModel.blueContestant.acronym;
+    self.rightTeamName.text = matchModel.redContestant.acronym;
+    
+    NSString *urlString = @"http://na.lolesports.com/";
+    
+    self.leftTeamLogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.blueContestant.logoURL]]]];
+    self.rightTeamLogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.redContestant.logoURL]]]];
 }
 
 @end

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScheduleModel.h"
 
 @interface ScheduleCellView : UITableViewCell
 
-- (void)setCellContent;
+- (void)setCellContent:(MatchModel *)matchModel;
 
 @end

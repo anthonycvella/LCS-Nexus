@@ -38,6 +38,7 @@
             
             [self.matchArray addObject:currentMatch];
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MatchDataLoaded" object:self];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -53,6 +54,16 @@
     currentContestant.losses = [[contestantObject objectForKey:@"losses"] intValue];
     
     return currentContestant;
+}
+
+- (int)numberOfMatches
+{
+    return self.matchArray.count;
+}
+
+- (MatchModel *)matchForIndex:(int)row
+{
+    return [self.matchArray objectAtIndex:row];
 }
 
 @end
