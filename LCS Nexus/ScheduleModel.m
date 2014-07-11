@@ -21,7 +21,7 @@
 {
     self.matchArray = [NSMutableArray array];
     
-    NSDictionary *parameters = @{@"tournamentId": @"149"};
+    NSDictionary *parameters = @{@"tournamentId": @"155"};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://na.lolesports.com:80/api/schedule.json?" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         for (NSString *matchKey in responseObject) {

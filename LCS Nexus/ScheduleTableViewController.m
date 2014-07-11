@@ -76,7 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"ScheduleCell";
-    ScheduleCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    ScheduleCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     [cell setCellContent:[self.scheduleModel matchForIndex:indexPath.row]];
     

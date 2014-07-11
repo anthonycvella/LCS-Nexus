@@ -26,12 +26,13 @@
             <objects>
                 <tableViewController id="FgT-eu-ZwJ" customClass="ScheduleTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="i9X-Gu-5Ff">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" id="PfG-20-KTA" customClass="ScheduleCellView">
-                                <rect key="frame" x="0.0" y="86" width="320" height="66"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PfG-20-KTA" id="Bf5-gS-40l">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -68,6 +69,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.14973294005102045" green="0.14973294005102045" blue="0.14973294005102045" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="leftTeamLogo" destination="y8h-dw-T9a" id="PKv-xm-8dJ"/>
                                     <outlet property="leftTeamName" destination="pcH-aS-em0" id="VGN-Mh-HWY"/>
@@ -81,6 +83,7 @@
                             <outlet property="delegate" destination="FgT-eu-ZwJ" id="ZDx-y5-xAR"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Schedule" id="KAh-cb-jR3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKe-bS-n30" userLabel="First Responder" sceneMemberID="firstResponder"/>

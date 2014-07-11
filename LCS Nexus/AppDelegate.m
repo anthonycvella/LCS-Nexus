@@ -14,8 +14,16 @@
 {
     // Override point for customization after application launch.
     
-    // Changes the Status Bar color to white
+    // Customize Status Bar Colors
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // Customize UINavigationBar Colors
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    // Customize UITabBar Colors
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1]];
     
     return YES;
 }
