@@ -26,7 +26,7 @@
 @property (strong, nonatomic) NSDate *dateTime;
 @property (strong, nonatomic) NSString *winnerId;
 
-- (NSString *)toStringFromDateTime:(NSDate *)dateTime;
++ (NSDate *)toNSDateFromString:(NSString *)dateTime;
 
 @end
 

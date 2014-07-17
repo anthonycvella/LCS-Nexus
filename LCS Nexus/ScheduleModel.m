@@ -27,7 +27,7 @@
         for (NSString *matchKey in responseObject) {
             NSDictionary *matchObject = [responseObject valueForKey:matchKey];
             MatchModel *currentMatch = [[MatchModel alloc] init];
-            currentMatch.dateTime = [matchObject objectForKey:@"dateTime"];
+            currentMatch.dateTime = [MatchModel toNSDateFromString:[matchObject objectForKey:@"dateTime"]];
             currentMatch.winnerId = [matchObject objectForKey:@"winnerId"];
             
             NSDictionary *contestantsObject = [matchObject objectForKey:@"contestants"];
@@ -59,7 +59,7 @@
 
 - (int)numberOfMatches
 {
-    return self.matchArray.count;
+    return (int) self.matchArray.count;
 }
 
 - (MatchModel *)matchForIndex:(int)row
@@ -71,17 +71,16 @@
 
 @implementation MatchModel
 
-- (NSString *)toStringFromDateTime:(NSDate *)dateTime;
++ (NSDate *)toNSDateFromString:(NSString *)dateTime
 {
     NSLog(@"%@", dateTime);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm'Z'";
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm'Z";
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    dateFormatter.dateFormat = @"EEEE,MMM d";
-    NSString *matchDateString = [dateFormatter stringFromDate:dateTime];
+    NSDate *matchDate = [dateFormatter dateFromString:dateTime];
     
-    NSLog(@"MATCH %@", matchDateString);
-    return matchDateString;
+    NSLog(@"MATCH %@", matchDate);
+    return matchDate;
 }
 
 @end

@@ -50,7 +50,7 @@
     self.leftTeamName.text = matchModel.blueContestant.acronym;
     self.rightTeamName.text = matchModel.redContestant.acronym;
     
-    self.matchDate.text = [matchModel toStringFromDateTime:matchModel.dateTime];
+    self.matchDate.text = [matchModel.dateTime description];
     
     NSString *urlString = @"http://na.lolesports.com/";
     
