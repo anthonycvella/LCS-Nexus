@@ -21,7 +21,7 @@
 {
     self.matchArray = [NSMutableArray array];
     
-    NSDictionary *parameters = @{@"tournamentId": @"155"};
+    NSDictionary *parameters = @{@"tournamentId": @"104"};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"http://na.lolesports.com:80/api/schedule.json?" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         for (NSString *matchKey in responseObject) {
@@ -52,6 +52,7 @@
     currentContestant.acronym = [contestantObject objectForKey:@"acronym"];
     currentContestant.wins = [[contestantObject objectForKey:@"wins"] intValue];
     currentContestant.losses = [[contestantObject objectForKey:@"losses"] intValue];
+    currentContestant.teamLogo = nil;
     
     return currentContestant;
 }
@@ -70,6 +71,18 @@
 
 @implementation MatchModel
 
+- (NSString *)toStringFromDateTime:(NSDate *)dateTime;
+{
+    NSLog(@"%@", dateTime);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm'Z'";
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+    dateFormatter.dateFormat = @"EEEE,MMM d";
+    NSString *matchDateString = [dateFormatter stringFromDate:dateTime];
+    
+    NSLog(@"MATCH %@", matchDateString);
+    return matchDateString;
+}
 
 @end
 

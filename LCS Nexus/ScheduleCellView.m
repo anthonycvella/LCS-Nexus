@@ -8,6 +8,7 @@
 
 #import "ScheduleCellView.h"
 #import "ScheduleTableViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface ScheduleCellView()
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *rightTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *leftTeamName;
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamName;
+@property (weak, nonatomic) IBOutlet UILabel *matchDate;
 
 @property (weak, nonatomic) ScheduleTableViewController *scheduleTableViewController;
 
@@ -48,10 +50,36 @@
     self.leftTeamName.text = matchModel.blueContestant.acronym;
     self.rightTeamName.text = matchModel.redContestant.acronym;
     
+    self.matchDate.text = [matchModel toStringFromDateTime:matchModel.dateTime];
+    
     NSString *urlString = @"http://na.lolesports.com/";
     
-    self.leftTeamLogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.blueContestant.logoURL]]]];
-    self.rightTeamLogo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.redContestant.logoURL]]]];
+    if (matchModel.blueContestant.teamLogo == nil || matchModel.redContestant.teamLogo == nil) {
+        self.leftTeamLogo.image = [UIImage imageNamed:@"first"];
+        self.rightTeamLogo.image = [UIImage imageNamed:@"second"];
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+            
+            matchModel.blueContestant.teamLogo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.blueContestant.logoURL]]]];
+            matchModel.redContestant.teamLogo = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", urlString, matchModel.redContestant.logoURL]]]];
+            
+            if (matchModel.blueContestant.teamLogo == nil) {
+                matchModel.blueContestant.teamLogo = [UIImage imageNamed:@"first"];
+            }
+            if (matchModel.redContestant.teamLogo == nil) {
+                matchModel.redContestant.teamLogo = [UIImage imageNamed:@"second"];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                
+                self.leftTeamLogo.image = matchModel.blueContestant.teamLogo;
+                self.rightTeamLogo.image = matchModel.redContestant.teamLogo;
+            });
+        });
+    } else {
+        self.leftTeamLogo.image = matchModel.blueContestant.teamLogo;
+        self.rightTeamLogo.image = matchModel.redContestant.teamLogo;
+    }
 }
 
 @end

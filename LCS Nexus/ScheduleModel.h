@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *acronym;
 @property (assign, nonatomic) int wins;
 @property (assign, nonatomic) int losses;
+@property (strong, nonatomic) UIImage *teamLogo;
 
 @end
 
@@ -22,8 +23,10 @@
 
 @property (strong, nonatomic) ContestantModel *blueContestant;
 @property (strong, nonatomic) ContestantModel *redContestant;
-@property (strong, nonatomic) NSString *dateTime;
+@property (strong, nonatomic) NSDate *dateTime;
 @property (strong, nonatomic) NSString *winnerId;
+
+- (NSString *)toStringFromDateTime:(NSDate *)dateTime;
 
 @end
 
