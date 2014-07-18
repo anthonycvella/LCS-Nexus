@@ -87,5 +87,4 @@
 
 @implementation ContestantModel
 
-
 @end

@@ -6,31 +6,35 @@
 //  Copyright (c) 2014 Vella, Anthony. All rights reserved.
 //
 
-#import "ScheduleTableViewController.h"
+#import "ScheduleViewController.h"
 #import "ScheduleCellView.h"
 #import "ScheduleModel.h"
+#import "HMSegmentedControl.h"
 #import <AFNetworking/AFNetworking.h>
 
-@interface ScheduleTableViewController()
+@interface ScheduleViewController()
 
 @property (strong, nonatomic) ScheduleModel *scheduleModel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *segmentedView;
 
 @end
 
-@implementation ScheduleTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation ScheduleViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Week 1", @"Week 2", @"Week 3"]];
+    segmentedControl.frame = CGRectMake(0, 0, self.segmentedView.frame.size.width, self.segmentedView.frame.size.height);
+    segmentedControl.textColor = [UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1];
+    segmentedControl.selectedTextColor = [UIColor whiteColor];
+    segmentedControl.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1];
+    segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    segmentedControl.selectionIndicatorColor = [UIColor whiteColor];
+    segmentedControl.selectionIndicatorHeight = 2.0f;
+    [self.segmentedView addSubview:segmentedControl];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(matchDataLoaded) name:@"MatchDataLoaded" object:nil];
     

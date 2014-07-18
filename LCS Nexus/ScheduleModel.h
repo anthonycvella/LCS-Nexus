@@ -30,6 +30,11 @@
 
 @end
 
+@interface RoundModel : NSObject
+
+
+@end
+
 @interface ScheduleModel : NSObject
 
 - (void)loadDataFromJSON;

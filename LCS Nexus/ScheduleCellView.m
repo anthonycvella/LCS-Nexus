@@ -7,7 +7,7 @@
 //
 
 #import "ScheduleCellView.h"
-#import "ScheduleTableViewController.h"
+#import "ScheduleViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
 @interface ScheduleCellView()
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightTeamName;
 @property (weak, nonatomic) IBOutlet UILabel *matchDate;
 
-@property (weak, nonatomic) ScheduleTableViewController *scheduleTableViewController;
+@property (weak, nonatomic) ScheduleViewController *scheduleTableViewController;
 
 @end
 

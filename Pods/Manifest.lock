@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - HMSegmentedControl (1.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
+  - HMSegmentedControl (~> 1.3.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  HMSegmentedControl: 9b3a39b9efd3d370b5d3d7b7cd5430f01a889b0b
 
 COCOAPODS: 0.33.1
