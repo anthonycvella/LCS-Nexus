@@ -25,6 +25,7 @@
 @property (strong, nonatomic) ContestantModel *redContestant;
 @property (strong, nonatomic) NSDate *dateTime;
 @property (strong, nonatomic) NSString *winnerId;
+@property (strong, nonatomic) NSString *roundId;
 
 + (NSDate *)toNSDateFromString:(NSString *)dateTime;
 
@@ -32,13 +33,18 @@
 
 @interface RoundModel : NSObject
 
+@property (strong, nonatomic) NSMutableArray *matchArray;
 
 @end
 
 @interface ScheduleModel : NSObject
 
+@property (strong, nonatomic, readonly) NSArray *sortedKeys;
+
 - (void)loadDataFromJSON;
 - (int)numberOfMatches;
+- (int)numberOfMatchesForRound:(NSString *)round;
 - (MatchModel *)matchForIndex:(int)row;
+- (MatchModel *)matchForRound:(NSString *)round forIndexRow:(int)row;
 
 @end

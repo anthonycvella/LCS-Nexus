@@ -12,6 +12,7 @@
 @interface ScheduleModel()
 
 @property (strong, nonatomic) NSMutableArray *matchArray;
+@property (strong, nonatomic) NSMutableDictionary *roundDictionary;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)loadDataFromJSON
 {
     self.matchArray = [NSMutableArray array];
+    self.roundDictionary = [NSMutableDictionary dictionary];
     
     NSDictionary *parameters = @{@"tournamentId": @"104"};
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -29,6 +31,7 @@
             MatchModel *currentMatch = [[MatchModel alloc] init];
             currentMatch.dateTime = [MatchModel toNSDateFromString:[matchObject objectForKey:@"dateTime"]];
             currentMatch.winnerId = [matchObject objectForKey:@"winnerId"];
+            currentMatch.roundId = [[matchObject objectForKey:@"tournament"] objectForKey:@"round"];
             
             NSDictionary *contestantsObject = [matchObject objectForKey:@"contestants"];
             if ([contestantsObject isKindOfClass:[NSDictionary class]]) {
@@ -37,6 +40,15 @@
             }
             
             [self.matchArray addObject:currentMatch];
+            
+            NSMutableArray *roundMatchArray;
+            if ((roundMatchArray = [self.roundDictionary valueForKey:currentMatch.roundId])) {
+                [roundMatchArray addObject:currentMatch];
+            } else {
+                NSMutableArray *roundMatchArray = [[NSMutableArray alloc] init];
+                [roundMatchArray addObject:currentMatch];
+                [self.roundDictionary setObject:roundMatchArray forKey:currentMatch.roundId];
+            }
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"MatchDataLoaded" object:self];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -62,9 +74,30 @@
     return (int) self.matchArray.count;
 }
 
+- (int)numberOfMatchesForRound:(NSString *)round
+{
+    NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
+    
+    return (int) localMatchArray.count;
+}
+
 - (MatchModel *)matchForIndex:(int)row
 {
     return [self.matchArray objectAtIndex:row];
+}
+
+- (MatchModel *)matchForRound:(NSString *)round forIndexRow:(int)row
+{
+    NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
+    
+    return [localMatchArray objectAtIndex:row];
+}
+
+- (NSArray *)sortedKeys
+{
+    NSArray *values = [self.roundDictionary allKeys];
+    
+    return [values sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
 }
 
 @end
