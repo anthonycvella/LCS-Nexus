@@ -39,6 +39,7 @@
     self.segmentedControl.selectionIndicatorHeight = 2.0f;
     self.segmentedControl.scrollEnabled = YES;
     [self.segmentedControl setSegmentEdgeInset:UIEdgeInsetsMake(0, 20, 0, 20)];
+    [self.segmentedControl addTarget:self action:@selector(newRoundSelected:) forControlEvents:UIControlEventValueChanged];
     [self.segmentedView addSubview:self.segmentedControl];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(matchDataLoaded) name:@"MatchDataLoaded" object:nil];
@@ -78,6 +79,12 @@
     [self.tableView reloadData];
 }
 
+- (void)newRoundSelected:(HMSegmentedControl *)segmentedControl
+{
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,7 +96,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.scheduleModel.sortedKeys.count;
+    if (self.scheduleModel.sortedKeys && self.scheduleModel.sortedKeys.count > self.segmentedControl.selectedSegmentIndex) {
+        NSString *round = self.scheduleModel.sortedKeys[self.segmentedControl.selectedSegmentIndex];
+        NSLog(@"%d", [self.scheduleModel numberOfMatchesForRound:round]);
+        return [self.scheduleModel numberOfMatchesForRound:round];
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,7 +110,8 @@
     static NSString *cellIdentifier = @"ScheduleCell";
     ScheduleCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    [cell setCellContent:[self.scheduleModel matchForIndex:indexPath.row]];
+    NSString *round = self.scheduleModel.sortedKeys[self.segmentedControl.selectedSegmentIndex];
+    [cell setCellContent:[self.scheduleModel matchForRound:round forIndexRow:(int)indexPath.row]];
     
     return cell;
 }

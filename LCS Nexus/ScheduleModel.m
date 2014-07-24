@@ -18,6 +18,7 @@
 
 @implementation ScheduleModel
 
+
 - (void)loadDataFromJSON
 {
     self.matchArray = [NSMutableArray array];
@@ -89,7 +90,6 @@
 - (MatchModel *)matchForRound:(NSString *)round forIndexRow:(int)row
 {
     NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
-    
     return [localMatchArray objectAtIndex:row];
 }
 
@@ -107,7 +107,6 @@
 - (NSArray *)sortedKeys
 {
     NSArray *values = [self.roundDictionary allKeys];
-    
     return [values sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
 }
 
