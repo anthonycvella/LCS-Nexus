@@ -41,7 +41,7 @@
                                 <color key="backgroundColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" id="PfG-20-KTA" customClass="ScheduleCellView">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" id="PfG-20-KTA" customClass="ScheduleCellView">
                                         <rect key="frame" x="0.0" y="22" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PfG-20-KTA" id="Bf5-gS-40l">
@@ -87,6 +87,7 @@
                                             <outlet property="matchDate" destination="P1s-GI-aCR" id="KRX-td-wIy"/>
                                             <outlet property="rightTeamLogo" destination="zng-r7-y0c" id="cUo-Bo-Pzc"/>
                                             <outlet property="rightTeamName" destination="CWe-gz-5hy" id="40w-v8-GEC"/>
+                                            <segue destination="9dI-r2-2O3" kind="push" id="6jz-KU-UHA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -108,6 +109,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEb-JZ-fpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="-561"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3uh-90-IkO">
+            <objects>
+                <viewController id="9dI-r2-2O3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qbg-G2-Ntm"/>
+                        <viewControllerLayoutGuide type="bottom" id="rXG-cb-Wi1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="usT-iH-dj2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Ia-Oy-5Xu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkr-nS-fcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="-561"/>
         </scene>
         <!--Standings-->
         <scene sceneID="d51-bO-8da">
