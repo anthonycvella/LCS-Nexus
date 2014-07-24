@@ -45,7 +45,7 @@
     self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     self.segmentedControl.selectionIndicatorColor = [UIColor whiteColor];
-    self.segmentedControl.selectionIndicatorHeight = 2.0f;
+    self.segmentedControl.selectionIndicatorHeight = 4.0f;
     self.segmentedControl.scrollEnabled = YES;
     [self.segmentedControl setSegmentEdgeInset:UIEdgeInsetsMake(0, 20, 0, 20)];
     [self.segmentedView addSubview:self.segmentedControl];
