@@ -26,7 +26,7 @@
     
     // Customize UITabBar Colors
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:15.0/255.0 green:15.0/255.0 blue:15.0/255.0 alpha:1]];
     
     return YES;
 }
