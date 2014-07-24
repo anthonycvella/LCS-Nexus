@@ -31,7 +31,8 @@
     self.segmentedControl.frame = CGRectMake(0, 0, self.segmentedView.frame.size.width, self.segmentedView.frame.size.height);
     self.segmentedControl.textColor = [UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1];
     self.segmentedControl.selectedTextColor = [UIColor whiteColor];
-    self.segmentedControl.backgroundColor = [UIColor colorWithRed:29.0/255.0 green:29.0/255.0 blue:29.0/255.0 alpha:1];
+    self.segmentedControl.font = [UIFont fontWithName:@"HelveticaNeue" size:17.0f];
+    self.segmentedControl.backgroundColor = [UIColor colorWithRed:31.0/255.0 green:31.0/255.0 blue:31.0/255.0 alpha:1];
     self.segmentedControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     self.segmentedControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     self.segmentedControl.selectionIndicatorColor = [UIColor whiteColor];
@@ -71,7 +72,7 @@
 - (void)matchDataLoaded
 {
     NSLog(@"%@", self.scheduleModel.sortedKeys);
-//    self.segmentedControl.sectionTitles = self.scheduleModel.sortedKeys;
+    self.segmentedControl.sectionTitles = self.scheduleModel.sectionTitles;
     self.segmentedControl.frame = CGRectMake(0, 0, self.segmentedView.frame.size.width, self.segmentedView.frame.size.height);
 
     [self.tableView reloadData];

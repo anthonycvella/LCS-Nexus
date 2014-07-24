@@ -93,6 +93,17 @@
     return [localMatchArray objectAtIndex:row];
 }
 
+- (NSArray *)sectionTitles
+{
+    NSMutableArray *sortedKeysAppended = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < self.sortedKeys.count; i++) {
+        [sortedKeysAppended addObject:[NSString stringWithFormat:@"Week %@", self.sortedKeys[i]]];
+    }
+    
+    return sortedKeysAppended;
+}
+
 - (NSArray *)sortedKeys
 {
     NSArray *values = [self.roundDictionary allKeys];

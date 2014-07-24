@@ -46,5 +46,6 @@
 - (int)numberOfMatchesForRound:(NSString *)round;
 - (MatchModel *)matchForIndex:(int)row;
 - (MatchModel *)matchForRound:(NSString *)round forIndexRow:(int)row;
+- (NSArray *)sectionTitles;
 
 @end
