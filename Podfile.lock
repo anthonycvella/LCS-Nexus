@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - HMSegmentedControl (1.3.0)
+  - youtube-ios-player-helper (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
   - HMSegmentedControl (~> 1.3.0)
+  - youtube-ios-player-helper (~> 0.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   HMSegmentedControl: 9b3a39b9efd3d370b5d3d7b7cd5430f01a889b0b
+  youtube-ios-player-helper: 53aecd0b4763a77e6890e9a7c55abb7b5c4bedea
 
 COCOAPODS: 0.33.1

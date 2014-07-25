@@ -51,7 +51,7 @@
     [self.segmentedControl addTarget:self action:@selector(newRoundSelected:) forControlEvents:UIControlEventValueChanged];
     [self.segmentedView addSubview:self.segmentedControl];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(matchDataLoaded) name:@"MatchDataLoaded" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scheduleDataLoaded) name:@"ScheduleDataLoaded" object:nil];
     
     self.scheduleModel = [[ScheduleModel alloc] init];
     [self.scheduleModel loadDataFromJSON];
@@ -74,12 +74,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) dealloc
+- (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)matchDataLoaded
+- (void)scheduleDataLoaded
 {
     NSLog(@"%@", self.scheduleModel.sortedKeys);
     self.segmentedControl.sectionTitles = self.scheduleModel.sectionTitles;

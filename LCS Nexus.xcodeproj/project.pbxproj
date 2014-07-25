@@ -26,6 +26,8 @@
 		871BD529196CF0ED00CEA6CA /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */; };
 		871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */; };
 		87E16162196F942C00923320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870A06B5196CE0E0009F6433 /* Main.storyboard */; };
+		87ED0EA31981F8CD009D4AB9 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */; };
+		87ED0EA9198205A9009D4AB9 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87ED0EA8198205A9009D4AB9 /* GameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +43,8 @@
 /* Begin PBXFileReference section */
 		0E47818F12F14255827435D6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		76389CA972384DA197705137 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		8709B3BB196E4831006B9FB1 /* ScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleModel.h; sourceTree = "<group>"; };
-		8709B3BC196E4831006B9FB1 /* ScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleModel.m; sourceTree = "<group>"; };
+		8709B3BB196E4831006B9FB1 /* ScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleModel.h; path = "Data Models/ScheduleModel.h"; sourceTree = "<group>"; };
+		8709B3BC196E4831006B9FB1 /* ScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleModel.m; path = "Data Models/ScheduleModel.m"; sourceTree = "<group>"; };
 		870A06A0196CE0E0009F6433 /* LCS Nexus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LCS Nexus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A06A3196CE0E0009F6433 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		870A06A5196CE0E0009F6433 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +70,11 @@
 		871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCellView.h; sourceTree = "<group>"; };
 		871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleCellView.m; sourceTree = "<group>"; };
+		87ED0EA11981F8CD009D4AB9 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
+		87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
+		87ED0EA51981FFE5009D4AB9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		87ED0EA7198205A9009D4AB9 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameModel.h; path = "Data Models/GameModel.h"; sourceTree = "<group>"; };
+		87ED0EA8198205A9009D4AB9 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameModel.m; path = "Data Models/GameModel.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,7 @@
 		870A06A2196CE0E0009F6433 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87ED0EA51981FFE5009D4AB9 /* AVFoundation.framework */,
 				870A06A3196CE0E0009F6433 /* Foundation.framework */,
 				870A06A5196CE0E0009F6433 /* CoreGraphics.framework */,
 				870A06A7196CE0E0009F6433 /* UIKit.framework */,
@@ -139,11 +147,12 @@
 				870A06BC196CE0E0009F6433 /* SecondViewController.m */,
 				871BD527196CF0ED00CEA6CA /* ScheduleViewController.h */,
 				871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */,
+				87ED0EA11981F8CD009D4AB9 /* MatchViewController.h */,
+				87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */,
 				871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */,
 				871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */,
-				8709B3BB196E4831006B9FB1 /* ScheduleModel.h */,
-				8709B3BC196E4831006B9FB1 /* ScheduleModel.m */,
 				870A06BE196CE0E0009F6433 /* Images.xcassets */,
+				87ED0EA41981FC09009D4AB9 /* Data Models */,
 				870A06AA196CE0E0009F6433 /* Supporting Files */,
 			);
 			path = "LCS Nexus";
@@ -176,6 +185,17 @@
 				870A06CE196CE0E0009F6433 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87ED0EA41981FC09009D4AB9 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				8709B3BB196E4831006B9FB1 /* ScheduleModel.h */,
+				8709B3BC196E4831006B9FB1 /* ScheduleModel.m */,
+				87ED0EA7198205A9009D4AB9 /* GameModel.h */,
+				87ED0EA8198205A9009D4AB9 /* GameModel.m */,
+			);
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				870A06BD196CE0E0009F6433 /* SecondViewController.m in Sources */,
+				87ED0EA9198205A9009D4AB9 /* GameModel.m in Sources */,
 				871BD529196CF0ED00CEA6CA /* ScheduleViewController.m in Sources */,
 				870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */,
 				870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */,
+				87ED0EA31981F8CD009D4AB9 /* MatchViewController.m in Sources */,
 				870A06B0196CE0E0009F6433 /* main.m in Sources */,
 				8709B3BD196E4831006B9FB1 /* ScheduleModel.m in Sources */,
 				871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */,

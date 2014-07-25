@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BEAA3EA751B47A198AD8C52"
-               BuildableName = "libPods-HMSegmentedControl.a"
-               BlueprintName = "Pods-HMSegmentedControl"
+               BlueprintIdentifier = "F723A8D2DB4C41D8A92435B0"
+               BuildableName = "libPods-youtube-ios-player-helper.a"
+               BlueprintName = "Pods-youtube-ios-player-helper"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
