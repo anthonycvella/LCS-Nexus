@@ -44,8 +44,19 @@
 - (void)loadDataFromJSON;
 - (int)numberOfMatches;
 - (int)numberOfMatchesForRound:(NSString *)round;
+- (int)numberOfDaysForRound:(NSString *)round;
+- (int)numberOfMatchesForRound:(NSString *)round ForDayIndex:(int)day;
+
 - (MatchModel *)matchForIndex:(int)row;
 - (MatchModel *)matchForRound:(NSString *)round forIndexRow:(int)row;
+
+- (NSArray *)dayNamesForRound:(NSString *)round;
+- (NSString *)dayNameForRound:(NSString *)round forDayIndex:(int)day;
+
+- (NSArray *)matchesForRound:(NSString *)round;
+- (NSArray *)matchesForRound:(NSString *)round forDay:(int)day;
+- (MatchModel *)matchForRound:(NSString *)round forDay:(int)day forIndexRow:(int)row;
+
 - (NSArray *)sectionTitles;
 
 @end

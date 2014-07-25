@@ -78,8 +78,77 @@
 - (int)numberOfMatchesForRound:(NSString *)round
 {
     NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
-    
     return (int) localMatchArray.count;
+}
+
+- (int)numberOfDaysForRound:(NSString *)round
+{
+    NSMutableSet *uniqueDays = [[NSMutableSet alloc] init];
+    int numberOfDays = 0;
+    
+    // First, pull in the matches for round
+    NSArray *matchesForRound = [self matchesForRound:round];
+    
+    // Do processing to see how many different date entries
+    // are in this model.
+    for (MatchModel *match in matchesForRound)
+    {
+        // Extract the day from the matches
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d"];
+        NSString *dayName = [formatter stringFromDate:match.dateTime];
+        
+        if (![uniqueDays containsObject:dayName]) {
+            [uniqueDays addObject:dayName];
+            numberOfDays++;
+        }
+    }
+    
+    return numberOfDays;
+}
+
+- (int)numberOfMatchesForRound:(NSString *)round ForDayIndex:(int)day;
+{
+    // First, pull the matches for the round and day index.
+    NSArray *matchesForRoundDay = [self matchesForRound:round forDay:day];
+    
+    // Now simply just return the length of this array.
+    return (int)[matchesForRoundDay count];
+}
+
+- (NSArray *)dayNamesForRound:(NSString *)round;
+{
+    NSMutableSet *uniqueDays = [[NSMutableSet alloc] init];
+    NSMutableArray *dayHeader = [[NSMutableArray alloc] init];
+    
+    // First, pull in the matches for round
+    NSArray *matchesForRound = [self matchesForRound:round];
+    NSArray *sortedMatches = [matchesForRound sortedArrayUsingComparator:^NSComparisonResult(MatchModel* matchFirst, MatchModel* matchSecond) {
+        return [matchFirst.dateTime compare:matchSecond.dateTime];
+    }];
+    
+    // Do processing to see how many different date entries
+    // are in this model.
+    for (MatchModel *match in sortedMatches)
+    {
+        // Extract the day from the matches
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"EEEE, MMMM d"];
+        NSString *dayName = [formatter stringFromDate:match.dateTime];
+        
+        if (![uniqueDays containsObject:dayName]) {
+            [uniqueDays addObject:dayName];
+            [dayHeader addObject:dayName];
+        }
+    }
+    
+    return dayHeader;
+}
+
+- (NSString *)dayNameForRound:(NSString *)round forDayIndex:(int)day;
+{
+    NSArray *dayNamesForRound = [self dayNamesForRound:round];
+    return [dayNamesForRound objectAtIndex:day];
 }
 
 - (MatchModel *)matchForIndex:(int)row
@@ -91,6 +160,53 @@
 {
     NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
     return [localMatchArray objectAtIndex:row];
+}
+
+- (NSArray *) matchesForRound:(NSString *)round
+{
+    NSArray *matches = [self.roundDictionary objectForKey:round];
+    return matches;
+}
+
+- (NSArray *) matchesForRound:(NSString *)round forDay:(int)day
+{
+    NSMutableArray *matchesForDay = [[NSMutableArray alloc] init];
+    NSMutableSet *uniqueDays = [[NSMutableSet alloc] init];
+    int currentDay = -1;
+    
+    // First, get the matches for the current round, and then
+    // sort it by date.
+    NSArray *matches = [self matchesForRound:round];
+    NSArray *sortedMatches = [matches sortedArrayUsingComparator:^NSComparisonResult(MatchModel* matchFirst, MatchModel* matchSecond) {
+        return [matchFirst.dateTime compare:matchSecond.dateTime];
+    }];
+    
+    for (MatchModel *match in sortedMatches) {
+        // Extract the day number
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d"];
+        NSString *dayName = [formatter stringFromDate:match.dateTime];
+        
+        // If the day number is unique, increment the
+        // current day
+        if (![uniqueDays containsObject:dayName]) {
+            [uniqueDays addObject:dayName];
+            currentDay++;
+            if (currentDay > day) return matchesForDay;
+        }
+        
+        if (currentDay == day) {
+            [matchesForDay addObject:match];
+        }
+    }
+    
+    return matchesForDay;
+}
+
+- (MatchModel *) matchForRound:(NSString *)round forDay:(int)day forIndexRow:(int)row
+{
+    NSArray *matchForRoundDay = [self matchesForRound:round forDay:day];
+    return [matchForRoundDay objectAtIndex:row];
 }
 
 - (NSArray *)sectionTitles

@@ -90,8 +90,9 @@
 
 - (void)newRoundSelected:(HMSegmentedControl *)segmentedControl
 {
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.tableView setContentOffset:CGPointZero animated:YES];
+    //[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    //[self.tableView setContentOffset:CGPointZero animated:YES];
+    [self.tableView reloadData];
     
 }
 
@@ -100,18 +101,39 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    int selectedRound = (int)self.segmentedControl.selectedSegmentIndex;
+    
+    if (self.scheduleModel.sortedKeys && self.scheduleModel.sortedKeys.count > selectedRound)
+    {
+        NSString *round = [[self.scheduleModel sortedKeys] objectAtIndex:selectedRound];
+        return [self.scheduleModel numberOfDaysForRound:round];
+    } else {
+        return 0;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (self.scheduleModel.sortedKeys && self.scheduleModel.sortedKeys.count > self.segmentedControl.selectedSegmentIndex) {
+    int selectedRound = (int)self.segmentedControl.selectedSegmentIndex;
+    
+    if (self.scheduleModel.sortedKeys && self.scheduleModel.sortedKeys.count > selectedRound) {
         NSString *round = self.scheduleModel.sortedKeys[self.segmentedControl.selectedSegmentIndex];
-        NSLog(@"%d", [self.scheduleModel numberOfMatchesForRound:round]);
-        return [self.scheduleModel numberOfMatchesForRound:round];
+        return [self.scheduleModel numberOfMatchesForRound:round ForDayIndex:(int)section];
     } else {
         return 0;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    int selectedRound = (int)self.segmentedControl.selectedSegmentIndex;
+    
+    if (self.scheduleModel.sortedKeys && self.scheduleModel.sortedKeys.count > selectedRound) {
+        NSString *round = self.scheduleModel.sortedKeys[self.segmentedControl.selectedSegmentIndex];
+        return [self.scheduleModel dayNameForRound:round forDayIndex:(int)section];
+    } else {
+        return @"";
     }
 }
 
@@ -120,8 +142,10 @@
     static NSString *cellIdentifier = @"ScheduleCell";
     ScheduleCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    NSString *round = self.scheduleModel.sortedKeys[self.segmentedControl.selectedSegmentIndex];
-    [cell setCellContent:[self.scheduleModel matchForRound:round forIndexRow:(int)indexPath.row]];
+    int selectedRound = (int)self.segmentedControl.selectedSegmentIndex;
+    NSString *round = self.scheduleModel.sortedKeys[selectedRound];
+    MatchModel *match = [self.scheduleModel matchForRound:round forDay:(int)indexPath.section forIndexRow:(int)indexPath.row];
+    [cell setCellContent:match];
     
     return cell;
 }
