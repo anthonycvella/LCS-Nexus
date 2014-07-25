@@ -91,6 +91,7 @@
 - (void)newRoundSelected:(HMSegmentedControl *)segmentedControl
 {
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView setContentOffset:CGPointZero animated:YES];
     
 }
 
