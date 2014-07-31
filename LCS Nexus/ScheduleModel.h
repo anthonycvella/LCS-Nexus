@@ -24,6 +24,7 @@
 @property (strong, nonatomic) ContestantModel *blueContestant;
 @property (strong, nonatomic) ContestantModel *redContestant;
 @property (strong, nonatomic) NSDate *dateTime;
+@property (strong, nonatomic) NSString *gameId;
 @property (strong, nonatomic) NSString *winnerId;
 @property (strong, nonatomic) NSString *roundId;
 

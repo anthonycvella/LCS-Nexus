@@ -18,11 +18,13 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Customize UINavigationBar Colors
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:15.0/255.0 green:15.0/255.0 blue:15.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:31.0/255.0 green:31.0/255.0 blue:31.0/255.0 alpha:1]];
 
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
                                                            NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:20.0f]}];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1]];
     
     // Customize UITabBar Colors
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:146.0/255.0 blue:70.0/255.0 alpha:1]];

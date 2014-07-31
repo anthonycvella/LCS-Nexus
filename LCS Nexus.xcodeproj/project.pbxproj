@@ -14,8 +14,6 @@
 		870A06AE196CE0E0009F6433 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 870A06AC196CE0E0009F6433 /* InfoPlist.strings */; };
 		870A06B0196CE0E0009F6433 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06AF196CE0E0009F6433 /* main.m */; };
 		870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06B3196CE0E0009F6433 /* AppDelegate.m */; };
-		870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06B9196CE0E0009F6433 /* FirstViewController.m */; };
-		870A06BD196CE0E0009F6433 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06BC196CE0E0009F6433 /* SecondViewController.m */; };
 		870A06BF196CE0E0009F6433 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870A06BE196CE0E0009F6433 /* Images.xcassets */; };
 		870A06C6196CE0E0009F6433 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06C5196CE0E0009F6433 /* XCTest.framework */; };
 		870A06C7196CE0E0009F6433 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870A06A3196CE0E0009F6433 /* Foundation.framework */; };
@@ -24,6 +22,7 @@
 		870A06D2196CE0E0009F6433 /* LCS_NexusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 870A06D1196CE0E0009F6433 /* LCS_NexusTests.m */; };
 		871BD529196CF0ED00CEA6CA /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */; };
 		871BD52C196CF6FA00CEA6CA /* ScheduleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */; };
+		877CA1F31988C98E00F54B7C /* MatchCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 877CA1F21988C98E00F54B7C /* MatchCellView.m */; };
 		87E16162196F942C00923320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870A06B5196CE0E0009F6433 /* Main.storyboard */; };
 		87ED0EA31981F8CD009D4AB9 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */; };
 		87ED0EAE198217DF009D4AB9 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87ED0EAB198217DF009D4AB9 /* GameModel.m */; };
@@ -54,10 +53,6 @@
 		870A06B2196CE0E0009F6433 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		870A06B3196CE0E0009F6433 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		870A06B6196CE0E0009F6433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		870A06B8196CE0E0009F6433 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		870A06B9196CE0E0009F6433 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		870A06BB196CE0E0009F6433 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		870A06BC196CE0E0009F6433 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		870A06BE196CE0E0009F6433 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		870A06C4196CE0E0009F6433 /* LCS NexusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LCS NexusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		870A06C5196CE0E0009F6433 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -68,6 +63,8 @@
 		871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCellView.h; sourceTree = "<group>"; };
 		871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleCellView.m; sourceTree = "<group>"; };
+		877CA1F11988C98E00F54B7C /* MatchCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchCellView.h; sourceTree = "<group>"; };
+		877CA1F21988C98E00F54B7C /* MatchCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchCellView.m; sourceTree = "<group>"; };
 		87ED0EA11981F8CD009D4AB9 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
 		87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
 		87ED0EA51981FFE5009D4AB9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -141,16 +138,14 @@
 				870A06B2196CE0E0009F6433 /* AppDelegate.h */,
 				870A06B3196CE0E0009F6433 /* AppDelegate.m */,
 				870A06B5196CE0E0009F6433 /* Main.storyboard */,
-				870A06B8196CE0E0009F6433 /* FirstViewController.h */,
-				870A06B9196CE0E0009F6433 /* FirstViewController.m */,
-				870A06BB196CE0E0009F6433 /* SecondViewController.h */,
-				870A06BC196CE0E0009F6433 /* SecondViewController.m */,
 				871BD527196CF0ED00CEA6CA /* ScheduleViewController.h */,
 				871BD528196CF0ED00CEA6CA /* ScheduleViewController.m */,
 				87ED0EA11981F8CD009D4AB9 /* MatchViewController.h */,
 				87ED0EA21981F8CD009D4AB9 /* MatchViewController.m */,
 				871BD52A196CF6FA00CEA6CA /* ScheduleCellView.h */,
 				871BD52B196CF6FA00CEA6CA /* ScheduleCellView.m */,
+				877CA1F11988C98E00F54B7C /* MatchCellView.h */,
+				877CA1F21988C98E00F54B7C /* MatchCellView.m */,
 				870A06BE196CE0E0009F6433 /* Images.xcassets */,
 				87ED0EA41981FC09009D4AB9 /* Data Models */,
 				870A06AA196CE0E0009F6433 /* Supporting Files */,
@@ -333,11 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870A06BD196CE0E0009F6433 /* SecondViewController.m in Sources */,
 				87ED0EAE198217DF009D4AB9 /* GameModel.m in Sources */,
 				871BD529196CF0ED00CEA6CA /* ScheduleViewController.m in Sources */,
+				877CA1F31988C98E00F54B7C /* MatchCellView.m in Sources */,
 				870A06B4196CE0E0009F6433 /* AppDelegate.m in Sources */,
-				870A06BA196CE0E0009F6433 /* FirstViewController.m in Sources */,
 				87ED0EA31981F8CD009D4AB9 /* MatchViewController.m in Sources */,
 				870A06B0196CE0E0009F6433 /* main.m in Sources */,
 				87ED0EAF198217DF009D4AB9 /* ScheduleModel.m in Sources */,

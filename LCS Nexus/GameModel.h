@@ -14,10 +14,17 @@
 
 @end
 
+@interface PlayersModel : NSObject
+
+@property (strong, nonatomic) NSString *name;
+
+@end
+
 @interface GameModel : NSObject
 
 @property (strong, nonatomic) VODModel *vods;
+@property (strong, nonatomic) NSMutableArray *players;
 
-- (void)loadDataFromJSON;
+- (void)loadDataFromJSON:(NSString *)gameId;
 
 @end

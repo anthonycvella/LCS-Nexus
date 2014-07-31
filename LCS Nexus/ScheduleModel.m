@@ -31,6 +31,7 @@
             NSDictionary *matchObject = [responseObject valueForKey:matchKey];
             MatchModel *currentMatch = [[MatchModel alloc] init];
             currentMatch.dateTime = [MatchModel toNSDateFromString:[matchObject objectForKey:@"dateTime"]];
+            currentMatch.gameId = [[[matchObject objectForKey:@"games"] objectForKey:@"game0"] objectForKey:@"id"];
             currentMatch.winnerId = [matchObject objectForKey:@"winnerId"];
             currentMatch.roundId = [[matchObject objectForKey:@"tournament"] objectForKey:@"round"];
             
@@ -51,7 +52,7 @@
                 [self.roundDictionary setObject:roundMatchArray forKey:currentMatch.roundId];
             }
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"MatchDataLoaded" object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ScheduleDataLoaded" object:self];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -78,7 +79,7 @@
 - (int)numberOfMatchesForRound:(NSString *)round
 {
     NSArray *localMatchArray = [self.roundDictionary objectForKey:round];
-    return (int) localMatchArray.count;
+    return (int)localMatchArray.count;
 }
 
 - (int)numberOfDaysForRound:(NSString *)round
@@ -91,8 +92,7 @@
     
     // Do processing to see how many different date entries
     // are in this model.
-    for (MatchModel *match in matchesForRound)
-    {
+    for (MatchModel *match in matchesForRound) {
         // Extract the day from the matches
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"MMM d"];
@@ -162,13 +162,13 @@
     return [localMatchArray objectAtIndex:row];
 }
 
-- (NSArray *) matchesForRound:(NSString *)round
+- (NSArray *)matchesForRound:(NSString *)round
 {
     NSArray *matches = [self.roundDictionary objectForKey:round];
     return matches;
 }
 
-- (NSArray *) matchesForRound:(NSString *)round forDay:(int)day
+- (NSArray *)matchesForRound:(NSString *)round forDay:(int)day
 {
     NSMutableArray *matchesForDay = [[NSMutableArray alloc] init];
     NSMutableSet *uniqueDays = [[NSMutableSet alloc] init];
@@ -203,7 +203,7 @@
     return matchesForDay;
 }
 
-- (MatchModel *) matchForRound:(NSString *)round forDay:(int)day forIndexRow:(int)row
+- (MatchModel *)matchForRound:(NSString *)round forDay:(int)day forIndexRow:(int)row
 {
     NSArray *matchForRoundDay = [self matchesForRound:round forDay:day];
     return [matchForRoundDay objectAtIndex:row];
@@ -232,13 +232,11 @@
 
 + (NSDate *)toNSDateFromString:(NSString *)dateTime
 {
-    NSLog(@"%@", dateTime);
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm'Z";
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
     NSDate *matchDate = [dateFormatter dateFromString:dateTime];
     
-    NSLog(@"MATCH %@", matchDate);
     return matchDate;
 }
 

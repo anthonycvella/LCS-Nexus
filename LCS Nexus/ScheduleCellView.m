@@ -28,7 +28,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.contentView.bounds];
+        self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:45/255.0 green:45/255.0 blue:45/255.0 alpha:1.0];
     }
     return self;
 }
